@@ -93,3 +93,4 @@ descs(2) = mean(dev1);
 descs(3) = max(dev2);
 descs(4) = mean(dev2);
 
+%disp('in microtDescs function'); keyboard
