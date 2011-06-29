@@ -3,9 +3,25 @@ function [descs] = periodfuncDescs(feature, featureFs, tempoPeriod_I, beats_I, t
 % function [descs] = periodfuncDescs(feature, featureFs, tempoPeriod, beats_I, tempoPeriod_II, beats_II);
 %
 % compute some extra periodicity based descriptors - including event density and unsystematic microtimingDescs
+%
+
+%    Shake-It Rhythm Descriptors - low level features related to rhythmic structure of musical audio
+%    Copyright (C) 2011  Matthew Davies and INESC Porto
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation, either version 3 of the License, or
+%    (at your option) any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 % all of this up to acfPeaks is taken from the ssimDescs function... so probably want a sub-function to do this processing
-
 maxLag = 5; % presumably 5 seconds
 corrSize = round(maxLag * featureFs);
 % check that feature is at least maxLag seconds long, if not, zero pad

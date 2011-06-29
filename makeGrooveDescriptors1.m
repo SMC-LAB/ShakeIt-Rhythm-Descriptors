@@ -1,10 +1,26 @@
 function descriptors = makeGrooveDescriptors1(wavFilename,audioDir,dataDir);
-
+%
 % function descriptors = makeGrooveDescriptors1(wavFilename,audioDir,dataDir);
 %
 % top level function to compute descriptors for groove experiments.
 % 
 % this are a recoded version of those used by Fabien in the 2011 paper with Guy Madison
+
+%    Shake-It Rhythm Descriptors - low level features related to rhythmic structure of musical audio
+%    Copyright (C) 2011  Matthew Davies and INESC Porto
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation, either version 3 of the License, or
+%    (at your option) any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 % make the full path to the wave file - currently this code is mac/linux specific

@@ -1,14 +1,30 @@
-function [descs] = microtDescs(feature, featureFs,  beats, wavFilename, metLevel);
-
-% function [mtdescs] = microtDescs(feature, featureFs, beats, wavFilename, metLevel);
+function [descs,pattern] = microtDescs(feature, featureFs,  beats, wavFilename, metLevel);
+%
+% function [mtdescs,pattern] = microtDescs(feature, featureFs, beats, wavFilename, metLevel);
 %
 % compute micro-timing features
 %
 % original version required preferredTempo but don't actually need it.
 
+%    Shake-It Rhythm Descriptors - low level features related to rhythmic structure of musical audio
+%    Copyright (C) 2011  Matthew Davies and INESC Porto
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation, either version 3 of the License, or
+%    (at your option) any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
 %% Determine relevant metrical level for microtiming deviations
 %parse name --> genre
-
 if nargin<5 % if the metrical level isn't specified as an input then we can try to estimate it from the file name
 
 	genre = wavFilename(1:strfind(wavFilename,'_12')-3);
